@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorio10" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a1f7f939-47b7-496f-95f7-6f8f29dc57ef">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="de" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ate" class="java.util.Date">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     produto.`descricao` AS produto_descricao,
+     produto.`unidade` AS produto_unidade,
+     produto.`valor` AS produto_valor,
+     notasaida.`cod` AS notasaida_cod,
+     notasaida.`naturezaOperacao` AS notasaida_naturezaOperacao,
+     notasaida.`destino` AS notasaida_destino
+FROM
+     `produto` produto INNER JOIN `notaprodutosaida` notaprodutosaida ON produto.`codProd` = notaprodutosaida.`codProdutoSaida`
+     INNER JOIN `notasaida` notasaida ON notaprodutosaida.`codNotaSaida` = notasaida.`cod`
+ where dataEmissao >= $P{de} and dataEmissao <= $P{ate} ORDER BY notasaida_cod]]>
+	</queryString>
+	<field name="produto_descricao" class="java.lang.String"/>
+	<field name="produto_unidade" class="java.lang.String"/>
+	<field name="produto_valor" class="java.lang.Float"/>
+	<field name="notasaida_cod" class="java.lang.Integer"/>
+	<field name="notasaida_naturezaOperacao" class="java.lang.String"/>
+	<field name="notasaida_destino" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="85" splitType="Stretch">
+			<image>
+				<reportElement x="17" y="0" width="250" height="83" uuid="849f863a-2794-4ed2-8168-9759aca5a1f1"/>
+				<imageExpression><![CDATA["logoif.jpg"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="0" y="84" width="555" height="1" forecolor="#666666" uuid="573a56cf-161d-484f-acdf-9ea04a9eeb93"/>
+				<graphicElement>
+					<pen lineWidth="1.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="316" y="21" width="216" height="36" uuid="54dadeb9-c77a-4e31-b982-b5830e3c13af"/>
+				<textElement>
+					<font fontName="Arial" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Central de vendas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="49" width="228" height="19" forecolor="#666666" uuid="ee27c9cd-8599-4eae-bfc2-b737f2ed4542"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de notas de saída]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="17" y="7" width="132" height="20" forecolor="#666666" uuid="39548cc7-3a6d-4942-9d8d-af3b19015017"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Filtro por data:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="177" y="7" width="90" height="20" uuid="abdc6c52-27be-42aa-8a9c-646268206e33"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{de}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="149" y="7" width="31" height="20" uuid="225e179b-8e06-496d-8e40-d218b0a56e18"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[De:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="267" y="7" width="27" height="20" uuid="1c420142-1c49-4d32-b4d7-aacd412c998e"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Até:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="294" y="7" width="100" height="20" uuid="87ff662e-4711-42f3-81a2-dc797f51148a"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" forecolor="#666666" uuid="de0dfe87-7d40-4b5d-b088-032b9f9abf8b"/>
+				<graphicElement>
+					<pen lineWidth="1.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="10" width="90" height="20" uuid="160f47cd-4824-49d2-89e4-77c4241e9c8a"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descrição]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="10" width="100" height="20" uuid="e1de5f03-411a-4eee-a089-924e798924ba"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Unidade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="10" width="87" height="20" uuid="26043203-711d-4e5a-8aad-d0d66077aa09"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="277" y="10" width="79" height="20" uuid="5ce46f95-ab86-4145-9cc6-91fad463e51b"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Destino:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="356" y="10" width="121" height="20" uuid="0a2b5831-6426-4ea8-94c8-b7f1655f1a5f"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nat.Operação]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="477" y="10" width="78" height="20" uuid="2ad35bfe-37f1-49f5-a7db-7e45b11d2bd0"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cód Nota]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="90" height="20" uuid="d3a3c78d-1446-4e1a-a08f-3413824d24e5"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{produto_descricao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="0" width="100" height="20" uuid="b17d1c7d-b91b-43ff-a091-1049ebd9e099"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{produto_unidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="0" width="87" height="20" uuid="4de63ab0-a315-4b8c-a90c-179b5fe84d6e"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{produto_valor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="277" y="1" width="79" height="20" uuid="c85b8176-20b2-4f25-81e1-d55d937061b7"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{notasaida_destino}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="356" y="0" width="121" height="20" uuid="04cb9350-7ce1-4dfc-bac5-7366af0ed361"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{notasaida_naturezaOperacao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="477" y="0" width="78" height="20" uuid="9861587f-00d7-4c5e-8d53-6d18a6755275"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{notasaida_cod}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="532" y="34" width="100" height="20" uuid="96984729-fe30-4930-bc15-2485c63cd225"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

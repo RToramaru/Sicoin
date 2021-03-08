@@ -1,0 +1,31 @@
+
+PRIORIDADE ALTA
+Tabela Setores ter relacionamento com as notas
+Ajsutar redimensionamento da tela.
+Produtos Duplicados
+Adicionar responsável pelo lançamento da nota.
+Tratar exceções do banco.
+Padronizar Mensagens
+Não permitir inserir dois produtos iguais nas notas de entrada e saída.
+Testes
+
+
+PRIORIDADE MÉDIA
+Apenas CNPJ Válido
+Apenas CPF  Válido
+Determinar tamanho da senha.
+Manual de instalação.
+Padronizar Labels
+Tela Inicial
+
+PRIORIDADE BAIXA
+Alterar forma de selecionar data ou verificar para passar apenas datas válidas
+
+<html>
+<br />
+</html>
+
+
+
+
+
