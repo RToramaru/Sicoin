@@ -1,6 +1,6 @@
 # Sicoin
-Sicoin (Sistema de Contrôle de Insumos - Supplies Control System) is a system developed for the Instituto Federal do Norte de Minas Gerais - Campus Salinas IFNMG 
-The system aims to store data from incoming and outgoing transactions that pass through the sales center, based on the generation of reports based on numerous filters.
+Sicoin (Sistema de Contrôle de Insumos) é um sistema desenvolvido para o Instituto Federal do Norte de Minas Gerais - Campus Salinas IFNMG
+O sistema visa armazenar os dados das transações de entrada e saída que passam pelo centro de vendas, a partir da geração de relatórios a partir de diversos filtros.
 # Use
-1. Mount the database found in the m.mwb file
-2. Run the Login.java file in the path SICOIN/src/Telas/
+1. Monte o banco de dados encontrado no arquivo m.mwb
+2. Execute o arquivo Login.java no caminho SICOIN / src / Telas /
