@@ -1,5 +1,5 @@
 # Sicoin
-Sicoin (Sistema de Contrôle de Insumos - Raw Materials Control System) is a system developed for the Instituto Federal do Norte de Minas Gerais - Campus Salinas IFNMG 
+Sicoin (Sistema de Contrôle de Insumos - Supplies Control System) is a system developed for the Instituto Federal do Norte de Minas Gerais - Campus Salinas IFNMG 
 The system aims to store data from incoming and outgoing transactions that pass through the sales center, based on the generation of reports based on numerous filters.
 # Use
 1. Mount the database found in the m.mwb file
