@@ -4,3 +4,5 @@ O sistema visa armazenar os dados das transações de entrada e saída que passa
 # Use
 1. Monte o banco de dados encontrado no arquivo m.mwb
 2. Execute o arquivo Login.java no caminho SICOIN / src / Telas /
+
+[//]: <> (This is also a comment.)
