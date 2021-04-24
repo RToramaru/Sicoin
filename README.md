@@ -1,9 +1,29 @@
 # Sicoin
-Sicoin (Sistema de Controle de Insumos) é um sistema desenvolvido para o Instituto Federal do Norte de Minas Gerais - Campus Salinas IFNMG
 
-O sistema visa armazenar os dados das transações de entrada e saída que passam pelo centro de vendas, a partir da geração de relatórios a partir de diversos filtros.
-# Use
-1. Monte o banco de dados encontrado no arquivo m.mwb
-2. Execute o arquivo Login.java no caminho SICOIN / src / Telas /
+### Sobre
+O Sicoin ou Sistema de COntrole de Insumos é um sistema desktop desenvolvido para o Instituto Federal do Norte de Minas Gerais - Campus Salinas IFNMG visando armazenar os dados das transações de entrada e saída que passam pelo centro de vendas, a partir dos registros e das gerações de relatórios.
 
-[//]: <> (This is also a comment.)
+### Tecnologias
+* Java 1.8
+* Swing
+* MySQL
+
+### Instalação e uso
+clone o repositório 
+```
+https://github.com/RToramaru/sicoin.git
+```
+A aplicação foi construída utilizando da IDE NetBeans, então para utilização abra o projeto no NetBeans IDE e carregue as depêndencias.
+
+Antes de iniciar o projeto carregue o banco de dados m.mwb.
+
+## Demonstração
+
+![](/screens/1.png)
+![](/screens/2.png)
+![](/screens/3.png)
+![](/screens/4.png)
+![](/screens/5.png)
+![](/screens/6.png)
+![](/screens/7.png)
+![](/screens/8.png)
